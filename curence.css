@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #f4e4ba, #f3c6c4);
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  min-height: 45vh;
+  width: 20%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  position: relative;
+}
+
+.container:hover {
+  /* transform: translateY(-15px) rotate(-1deg); */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #af4d98, #e94057);
+  border-radius: 1.5rem 1.5rem 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.container:hover::before {
+  transform: scaleX(1);
+}
+
+form {
+  margin: 2rem 0 1rem 0;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+  transition: all 0.4s ease;
+}
+
+form input {
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  height: 3rem;
+  padding-left: 0.75rem;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+  border-color: #af4d98;
+  box-shadow: 0 0 0 2px rgba(175, 77, 152, 0.2);
+  background-color: #ffffff;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.dropdown i {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #af4d98;
+  transition: color 0.4s ease;
+}
+
+.dropdown i:hover {
+  color: #e94057;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+.dropdown select:hover {
+  border-color: #af4d98;
+  box-shadow: 0 2px 8px rgba(175, 77, 152, 0.2);
+  background-color: #f0f0f0;
+}
+
+.select-container img {
+  max-width: 2rem;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.select-container:hover img {
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dcdcdc;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.select-container:hover {
+  background-color: #f0f0f0;
+  border-color: #af4d98;
+}
+
+.select-container select {
+  font-size: 1rem;
+  width: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.msg {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: color 0.4s ease, transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+}
+
+.msg:hover {
+  color: #af4d98;
+  background: #f3f6f9;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.msg.error {
+  color: #e94f4f;
+  background: #ffecec;
+}
+
+.msg.success {
+  color: #4caf50;
+  background: #e8f5e9;
+}
+
+
+form button {
+  height: 3rem;
+  background: linear-gradient(135deg, #af4d98, #e94057);
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+ .live:hover {
+  background: linear-gradient(135deg, #e94057, #af4d98);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.live:active {
+  transform: scale(0.98);
+}
+
+.live {
+  height: 3rem;
+  background: linear-gradient(135deg, #af4d98, #e94057);
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.live:hover {
+  background: linear-gradient(135deg, #e94057, #af4d98);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.live:active {
+  transform: scale(0.8);
+}
